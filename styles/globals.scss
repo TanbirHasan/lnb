@@ -1,0 +1,572 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500&display=swap");
+@import "../styles/auth/auth.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+}
+
+.MuiButton-root {
+  background: #d16f32 !important;
+  color: white;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  box-shadow: none !important;
+  &hover {
+    background: #d5783f;
+    color: #19263f;
+  }
+}
+.MuiButton-textPrimary {
+  color: white;
+}
+
+/* font family */
+
+/* tailwind integration */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Random class name
+
+@layer components {
+  .inputclass {
+    @apply w-full max-w-xs rounded-lg px-2 py-1 focus:outline-none border-[1px] border-none;
+  }
+  .menu-link {
+    @apply cursor-pointer text-lg px-3 py-3 font-medium mx-5 text-black;
+  }
+  .link-hover {
+    @apply hover:bg-[color:var(--primary1-color)] hover:px-3 hover:py-3 rounded-[5px] hover:text-white;
+  }
+  .login-nav {
+    @apply bg-primary p-1 px-4 rounded-[5px] text-white hover:bg-primaryHover;
+  }
+  .nav-active {
+    @apply bg-primary text-white;
+  }
+  .nav-text-active {
+    @apply text-primary;
+  }
+  .navbar {
+    @apply flex justify-between items-center py-5 px-20 bg-blue-100;
+  }
+
+  // Authentication form class
+
+  .authform {
+    @apply grid grid-cols-1 sm:grid-cols-6 h-screen;
+  }
+  .leftdiv {
+    @apply left-div md:col-span-2 hidden md:block;
+  }
+  .leftdivinner {
+    @apply flex flex-col items-start justify-between h-full;
+  }
+  .rightdiv {
+    @apply right-div bg-yellow-200 col-span-4;
+  }
+  .formclass {
+    @apply flex flex-col px-5 py-5 justify-center items-center h-screen;
+  }
+  .formbutton {
+    @apply inputclass headline6 bg-[color:var(--form-button-color)] text-white cursor-pointer my-5 border-none;
+  }
+  .formbottomlink {
+    @apply text-blue-600 my-5 text-[color:var(--form-button-color)] cursor-pointer;
+  }
+
+  // How it works section custom class------------
+  .howitworksOption {
+    @apply px-5 mx-auto lg:mx-0 md:mx-0 sm:mx-0;
+  }
+
+  .howitworkslogo {
+    @apply logodesign w-[28px] h-[28px] bg-[red] px-[5px] py-[5px] mb-5;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  // Banner custom class----------
+
+  //Banner feature - update every second - 30 Days trial - Unlimited data--------------
+
+  .bannerlebleclass {
+    @apply text-white text-[14px] lg:text-[16px] md:text-[16px] sm:text-[16px] mb-5;
+  }
+  .bannerinputclass {
+    @apply w-full py-3 uppercase font-bold text-xl rounded-lg headline6 my-5 text-center focus:outline-0 xl:w-full lg:w-4/5 md:w-2/3 sm:w-full bg-white;
+  }
+  .bannersubmitbutton {
+    @apply w-full py-3 uppercase font-bold text-xl rounded-lg headline6 my-5 text-center bg-[color:var(--primary1-color)] text-white cursor-pointer xl:w-full lg:w-4/5 md:w-2/3 sm:w-full;
+  }
+
+  // responsive font size class
+
+  .custom-text-opacity-60 {
+    @apply text-opacity-60 text-dark-202020;
+  }
+
+  .taglineRes {
+    @apply text-[16px] lg:text-[20px] md:text-[20px] sm:text-[20px];
+  }
+  .headline1Res {
+    @apply text-[24px] lg:text-[48px] md:text-[48px];
+  }
+  .headline2Res {
+    @apply text-[24px] xl:text-[40px] lg:text-[40px] md:text-[30px];
+  }
+  .headline3Res {
+    @apply text-[20px] lg:text-[36px] md:text-[32px];
+  }
+  .headline4Res {
+    @apply text-[17px] lg:text-[24px] md:text-[24px];
+  }
+  .headline5Res {
+    @apply xl:text-[20px] lg:text-[20px] md:text-[20px] text-[16px];
+  }
+  .headline6Res {
+    @apply text-[15px] lg:text-[18px] md:text-[18px] sm:text-[18px];
+  }
+}
+
+:root {
+  --form-button-color: #d16f32;
+  --primary1-button-color: #d16f32;
+  --primary2-button-color: #3294d1;
+  --primary1-color: #d16f32;
+  --primary2-color: #3294d1;
+  --primary3-color: #a8c6df;
+  --Black-one: #202020;
+  --Black-two: #19263f;
+  --Black-three: #47464a;
+  --Grey: #84818a;
+  --Teal: #fd5c5c;
+  --White: #ffffff;
+  --header-color: rgba(255, 255, 255, 0.87);
+  --input-class: input input-bordered w-full max-w-xs rounded-lg px-2 py-1
+    border-[1px];
+}
+
+/* Component Background Style class */
+.banner {
+  background-image: linear-gradient(
+      180deg,
+      rgba(25, 38, 63, 0.87) -43.82%,
+      #3294d1 100%
+    ),
+    url("/assets/Rectangle.png");
+  opacity: 0.97;
+  background-size: cover;
+}
+
+.left-div {
+  background-size: cover;
+  background-image: linear-gradient(
+      177.27deg,
+      #ffffff -11.42%,
+      rgba(255, 255, 255, 0.92) 16.59%,
+      rgba(50, 148, 209, 0.93) 54.34%,
+      #19263f 96.34%
+    ),
+    url("/assets/bg.png");
+  /* background: linear-gradient(177.27deg, #FFFFFF -11.42%, rgba(255, 255, 255, 0.92) 16.59%, rgba(50, 148, 209, 0.93) 54.34%, #19263F 96.34%),url("/assets/bg.png") ; */
+}
+
+.right-div {
+  background: linear-gradient(
+    180deg,
+    #5ea6d27e 0%,
+    rgba(75, 118, 145, 0) 66.36%
+  );
+  opacity: 0.9;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.Howitworks {
+  background-image: linear-gradient(rgba(0, 88, 142, 0.78), #00588e 78%),
+    url("/assets/Building.png");
+  background-position: cover;
+}
+.about {
+  background: linear-gradient(
+    180deg,
+    #d16f324a 0%,
+    rgba(209, 111, 50, 0) 66.36%
+  );
+  opacity: 0.68;
+}
+
+.contact {
+  background: linear-gradient(
+    180deg,
+    #d16f324a 0%,
+    rgba(209, 111, 50, 0) 66.36%
+  );
+  opacity: 0.68;
+}
+
+.contactinput {
+  background: #feffff;
+  border: 1px solid rgba(132, 129, 138, 0.4);
+  box-shadow: 5px 4px 50px rgba(0, 0, 0, 0.05);
+  border-radius: 7.79221px;
+}
+
+.vision {
+  background: #d16f3230;
+  opacity: 0.9;
+}
+
+.mission {
+  background: #3294d135;
+  opacity: 0.9;
+}
+
+.values {
+  background: #1c992834;
+  opacity: 0.9;
+}
+
+.logodesign {
+  background: rgba(50, 148, 209, 0.5);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15),
+    inset 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #d16f32;
+  border-radius: 10px;
+}
+
+.Searchbar {
+  width: 100%;
+
+  height: 24px !important;
+}
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-right: 42px !important;
+}
+
+.footer {
+  background: linear-gradient(
+    180deg,
+    rgba(50, 148, 209, 0) 0%,
+    rgba(50, 148, 209, 0.31) 100%
+  );
+}
+
+// slider custom css
+
+.jJoQOU {
+  padding-left: 10px;
+  grid-template-columns: repeat(1, 100%) !important;
+}
+
+// banner input file custom css
+
+// stepper custom css
+
+.MuiStep-root
+  MuiStep-horizontal
+  py-5
+  border-solid
+  border-2
+  w-full
+  css-1bw0nnu-MuiStep-root {
+  flex-direction: column;
+}
+
+// responsivenavbar css
+
+.header header {
+  background-color: rgb(219 234 254);
+  padding: 10px 30px;
+}
+
+.header header > div > div > div:nth-of-type(2) {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header header > div > div > div:nth-of-type(1) {
+  width: 100%;
+  justify-content: flex-end;
+}
+// .header header>div>div>div:nth-of-type(3){
+//    display: none;
+
+// }
+
+.header6 {
+  // font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 143.69%;
+}
+
+.headlinesemibold {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  // font-size: 14px;
+  line-height: 139.8%;
+}
+
+.Tagline {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  // font-size: 20px; md: 18px sm:16px
+  line-height: 147%;
+}
+
+.headline8 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  // font-size: 14px;
+  line-height: 17px;
+}
+
+.headline7 {
+  font-family: "Barlow";
+  font-style: normal;
+
+  font-weight: 400;
+  // font-size: 16px; md:12px
+  line-height: 19px;
+}
+
+.headline5 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.headline3 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  //font-size: 36px;
+  line-height: 147%;
+}
+
+.headline2 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 700;
+  // font-size: 40px; md:32px sm:24px
+  line-height: 143.69%;
+}
+
+.headline1 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  // font-size: 52px; md:36px sm:24px
+  line-height: 143.69%;
+}
+
+.reserveHeadlintext {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 900;
+  // font-size: 48px;
+  line-height: 179%;
+  /* or 86px */
+
+  text-transform: uppercase;
+
+  color: #202020;
+
+  opacity: 0.1;
+}
+
+.header6 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 143.69%;
+  @media screen and (max-width: 1450px) {
+    font-size: 35px;
+  }
+  @media screen and (max-width: 1305px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 25px;
+  }
+}
+.headline6 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  //font-size: 18px; sm:14px
+  line-height: 169%;
+}
+.headline8 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.headline4 {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px; // sm:16px
+  line-height: 32px;
+}
+
+// Payment Option component custom Css
+
+.payment-option-form {
+  div > div > div {
+    border-radius: 10px;
+  }
+}
+.payment-option-coupun-code {
+  div > div {
+    border-radius: 12px;
+  }
+}
+
+// CompanyProfile component custom css
+
+.section-style {
+  @apply w-full md:w-10/12 pt-8 mx-auto text-center px-5 md:px-0;
+}
+
+.companyprofile-table {
+  table {
+    width: 100%;
+    font-family: "Barlow";
+    color: #797979;
+    td,
+    th {
+      width: 50%;
+      border: 1px solid #f6f7f7;
+      text-align: left;
+      padding: 32px 23px;
+    }
+    tr:nth-child(even) {
+      background-color: #f6f7f7;
+    }
+    tr td:nth-child(2) {
+      color: #202020;
+      font-weight: 500;
+    }
+  }
+}
+
+// dashboard style
+
+.dashboard > div > div > div {
+  max-width: 100%;
+  background-color: rgb(241 245 249);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.lnb-custom-button {
+  background-color: #d16f32 !important;
+  padding: auto !important;
+  margin-top: 1rem !important;
+}
+.important-h-w {
+  height: 1.25rem !important;
+  width: 1.25rem !important;
+}
+
+// Stepper Step2 Custom Footer Css
+
+.CustomFooter p {
+  padding: 5px;
+}
+
+// Company list sender component autocomplete field style
+.CompanyName div div > div {
+  padding: 0px !important;
+}
+
+#form-file-upload {
+  //height: 16rem;
+  //width: 28rem;
+  max-width: 100%;
+  text-align: center;
+  position: relative;
+}
+.react-pdf__Page__canvas {
+  margin: auto !important;
+}
+
+#input-file-upload {
+  display: none;
+}
+
+#label-file-upload {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 2px;
+  border-radius: 1rem;
+  border-style: dashed;
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+#label-file-upload.drag-active {
+  background-color: #ffffff;
+}
+
+#drag-file-element {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+
+// print and post muichip
+
+.MuiChip-clickable {
+  cursor: pointer;
+}
